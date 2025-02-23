@@ -45,7 +45,6 @@
     curl
     fastfetch
     git
-    lm_sensors
     lsof
     vim
     wget
@@ -53,19 +52,6 @@
 
   environment.variables = {
     # KUBECONFIG = /etc/rancher/k3s/k3s.yaml;
-  };
-
-  # Services to start
-  services.openssh = {
-    enable = true;
-    ports = [ 222 ];
-    settings = {
-      PasswordAuthentication = false;
-      AllowUsers = [ "root" ]; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = false;
-      X11Forwarding = false;
-      PermitRootLogin = "yes"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-    };
   };
 
   nix = {

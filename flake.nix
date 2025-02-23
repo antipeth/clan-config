@@ -12,24 +12,16 @@
         inherit self;
         # Ensure this is unique among all clans you want to use.
         meta.name = "atp";
-        directory = ./.;
 
-        # All machines in the ./machines will be imported.
-
-        # Prerequisite: boot into the installer.
-        # See: https://docs.clan.lol/getting-started/installer
-        # local> mkdir -p ./machines/machine1
-        # local> Edit ./machines/<machine>/configuration.nix to your liking.
         machines = {
           homelab = {
-            nixpkgs.hostPlatform = "x86_64-linux";
             imports = [ ./machines/homelab/config.nix ];
             clan.core.networking.targetHost = "homelab";
           };
-          # You can also specify additional machines here.
-          # somemachine = {
-          #  imports = [ ./some-machine/configuration.nix ];
-          # }
+          cloudcone2 = {
+            imports = [ ./machines/cloudcone2/config.nix ];
+            clan.core.networking.targetHost = "cloudcone2";
+          };
         };
       };
     in

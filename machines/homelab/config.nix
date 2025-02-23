@@ -5,8 +5,9 @@
     ./user.nix
 
     ../../modules/system/base.nix
-    ../../modules/system/zfs.nix
     ../../modules/system/blacklist.nix
+    ../../modules/system/ssh.nix
+    ../../modules/system/zfs.nix
 
     ./services/postgres.nix
     ./services/samba.nix
