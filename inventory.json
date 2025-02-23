@@ -1,0 +1,9 @@
+{
+  "machines": {
+    "crystal": {
+      "name": "crystal",
+      "tags": [],
+      "deploy": {}
+    }
+  }
+}
