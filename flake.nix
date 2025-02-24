@@ -13,15 +13,9 @@
         # Ensure this is unique among all clans you want to use.
         meta.name = "atp";
 
+        directory = ./.;
         machines = {
-          homelab = {
-            imports = [ ./machines/homelab/config.nix ];
-            clan.core.networking.targetHost = "homelab";
-          };
-          cloudcone2 = {
-            imports = [ ./machines/cloudcone2/config.nix ];
-            clan.core.networking.targetHost = "cloudcone2";
-          };
+
         };
       };
     in

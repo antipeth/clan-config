@@ -1,11 +1,13 @@
+{ config, ... }:
 {
   imports = [
-    ./disko-config.nix
-    ./hardware.nix
     ./user.nix
+    ./network.nix
 
     ../../modules/system/base.nix
     ../../modules/system/blacklist.nix
+    # ../../modules/system/clan.nix
+    ../../modules/system/min.nix
     ../../modules/system/ssh.nix
     ../../modules/system/zfs.nix
 
@@ -23,8 +25,5 @@
   networking = {
     hostName = "homelab";
   };
-
-  # Zerotier needs one controller to accept new nodes. Once accepted
-  # the controller can be offline and routing still works.
-  clan.core.networking.zerotier.controller.enable = false;
+  clan.core.networking.targetHost = "homelab";
 }

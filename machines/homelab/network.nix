@@ -1,27 +1,6 @@
 { pkgs, ... }:
 {
   networking = {
-    usePredictableInterfaceNames = false;
-    interfaces.eth0.ipv4.addresses = [
-      {
-        address = "";
-        prefixLength = 24;
-      }
-    ];
-    defaultGateway = {
-      address = "";
-      interface = "eth0";
-    };
-    interfaces.eth0.ipv6.addresses = [
-      {
-        address = "";
-        prefixLength = 64;
-      }
-    ];
-    defaultGateway6 = {
-      address = "";
-      interface = "eth0";
-    };
     # Encrypted DNS
     dhcpcd.extraConfig = "nohook resolv.conf";
     nameservers = [
@@ -93,4 +72,5 @@
       ];
     };
   };
+
 }
